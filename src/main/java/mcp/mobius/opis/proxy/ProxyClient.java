@@ -1,12 +1,17 @@
 package mcp.mobius.opis.proxy;
 
 import cpw.mods.fml.relauncher.Side;
+import mapwriter.api.MwAPI;
 import mcp.mobius.mobiuscore.profiler.ProfilerSection;
 import mcp.mobius.opis.api.IMessageHandler;
+import mcp.mobius.opis.api.MessageHandlerRegistrar;
+import mcp.mobius.opis.api.TabPanelRegistrar;
+import mcp.mobius.opis.data.managers.MetaManager;
 import mcp.mobius.opis.gui.font.TrueTypeFont;
 import mcp.mobius.opis.modOpis;
 import mcp.mobius.opis.network.PacketBase;
 import mcp.mobius.opis.network.enums.Message;
+import mcp.mobius.opis.swing.SwingUI;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.logging.Level;
@@ -53,7 +58,7 @@ public class ProxyClient extends ProxyServer implements IMessageHandler {
         IMessageHandler panelTimingEntPerClass = (IMessageHandler)TabPanelRegistrar.INSTANCE.registerTab(new PanelTimingEntitiesPerClass(), "Entities [Type]", "Server timing");
         IMessageHandler panelTimingHandlers = (IMessageHandler)TabPanelRegistrar.INSTANCE.registerTab(new PanelTimingHandlers(), "Handlers", "Server timing");
         IMessageHandler panelTimingChunks = (IMessageHandler)TabPanelRegistrar.INSTANCE.registerTab(new PanelTimingChunks(), "Chunks", "Server timing");
-        IMessageHandler panelTimingEvents = (IMessageHandler)TabPanelRegistrar.INSTANCE.registerTab(new PanelTimingEvents(), "Events", "Server timing");
+        IMessageHandler panelTimingEvents = (IMessageHandler) TabPanelRegistrar.INSTANCE.registerTab(new PanelTimingEvents(), "Events", "Server timing");
 
         TabPanelRegistrar.INSTANCE.registerSection("Client timing");
         TabPanelRegistrar.INSTANCE.registerTab(new PanelRenderTileEnts(), "[Render] TileEnts", "Client timing");
